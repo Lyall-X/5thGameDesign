@@ -57,4 +57,21 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+/Client/.vs
+/Client/*.csproj
+/Client/Assembly-CSharp-Editor.csproj
+/Client/Logs
+/Client/Assets/StreamingAssets
+/Client/Assets/StreamingAssets.meta
+/Client/UserSettings
+/Client/Client.sln
+/Client/Client.sln
+/Client/Assembly-CSharp.csproj.user
+/Client/Assets/Plugins/Editor/JetBrains
+/Client/Assets/Plugins/Editor/JetBrains.meta
+/Client/Assets/Plugins/Editor/JetBrains
+/Client/Assets/Plugins/Editor/JetBrains
+/Client/Assets/Plugins/Editor/JetBrains
+/Client/PersistentData
+/Client/Build
 
