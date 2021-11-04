@@ -26,7 +26,7 @@ MonoBehaviour:
   ShortDescription: Used to fire rockets at everything else
   Description: "Rockets are cool. \nThere's no getting around that. \n- Elon Musk"
   Icon: {fileID: 21300006, guid: f3f4293ccdddd34468f58745d608416e, type: 3}
-  Prefab: {fileID: 1588939153425230, guid: 49d4c070e8b68be47ac21cc26f39a84c, type: 3}
+  Prefab: {fileID: 6186491995534088055, guid: 48fabcca8fecf034ba2797b6e0d710a1, type: 3}
   DropProperties:
     Shape: 0
     NormalToSpawnPlane: {x: 0, y: 1, z: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
   UseDefaultSoundsIfNull: 1
-  EquippableWeapon: {fileID: 114000012045269504, guid: a2ccbf69c460bd44a9e4a71ac3c0a9ad,
+  EquippableWeapon: {fileID: 114000012045269504, guid: 4f462cf6054a438458162cf62bc1c8c6,
     type: 3}
   AutoEquipMode: 1
   HandleWeaponID: 1
