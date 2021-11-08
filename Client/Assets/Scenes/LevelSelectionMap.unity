@@ -3691,7 +3691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d042072253d11428147ba0d074fa39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: MainScene
+  LevelName: Level1
   Fade: 1
   Save: 1
 --- !u!1 &1238307591
