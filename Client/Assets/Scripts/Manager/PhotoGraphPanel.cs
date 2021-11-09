@@ -3,35 +3,70 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using  DG.Tweening;
 
 public class PhotoGraphPanel: MonoBehaviour
 {
-    public RectTransform root;
-    private float timer = 0;
-    bool isstart = false;
+    public Transform photo;
+    public Button yesBtn, colseBtn, photoBtn, cameraBtn;
     public RawImage image;
     public Transform cameraScope;
     public RectTransform cameraAperture;
+    
+    private RectTransform root;
     private float screenWight, screenHight;
-    private Texture2D screenShot;
+
     private void Start()
     {
-        image.enabled = false;
+        photo.gameObject.SetActive(false);
         root = transform.GetComponent<RectTransform>();
-        screenShot = new Texture2D(256, 256, TextureFormat.RGB24, false);
         screenWight = Screen.width/ root.rect.width;
         screenHight = Screen.height/ root.rect.height;
+        yesBtn.onClick.AddListener(TakePicture);
+        colseBtn.onClick.AddListener(Close);
+        photoBtn.onClick.AddListener(ShowPhotos);
+        cameraBtn.onClick.AddListener(showCanmra);
     }
 
-    void Update()
+    public void Show()
     {
-        if (Input.GetKeyDown(KeyCode.A))//检测按下回车截图
-        {
-            isstart = true;
-            image.enabled = true;
-            image.texture = ScreenShot(Camera.main, cameraAperture);
-        }
+        gameObject.SetActive(true);
+        photo.gameObject.SetActive(false);
+        cameraAperture.localPosition = Vector3.zero;
     }
+
+    private void showCanmra()
+    {
+        //TODO  相机图片按钮
+    }
+
+    private void ShowPhotos()
+    {
+        //TODO 打开相册界面
+    }
+
+    private void Close()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void TakePicture()
+    {
+        //--TODO  判断拍照区域是否有道具
+        
+        photo.localScale = Vector3.one;
+        photo.localPosition = Vector3.zero;
+        photo.localEulerAngles = Vector3.zero;
+        photo.gameObject.SetActive(true);
+        image.texture = ScreenShot(Camera.main, cameraAperture);
+
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(photo.DORotate(new Vector3(0,0,-15), 0.1f));
+        sequence.Insert(1f,photo.DOMove(photoBtn.transform.position, 0.5f));
+        sequence.Insert(1f, photo.DOScale(Vector3.one * 0.2f, 0.5f));
+        sequence.onComplete = () => { photo.gameObject.SetActive(false); };
+    }
+    
 
     public Texture2D ScreenShot(Camera camera,RectTransform cameraAperture)
     {

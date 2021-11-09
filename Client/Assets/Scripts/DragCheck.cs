@@ -6,17 +6,14 @@ using UnityEngine.UI;
  
 public class DragCheck : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public RectTransform root;
     private RectTransform rt;
     Vector3 globalMousePos;
-
-    private RectTransform root;
-
     private float min_x, max_x, min_y, max_y;
     // Use this for initialization
     void Start ()
     {
         rt = gameObject.GetComponent<RectTransform>();
-        root = transform.parent.GetComponent<RectTransform>();
         min_x = root.position.x - (root.rect.width * 0.5f - rt.rect.width * 0.5f);
         max_x = root.position.x + (root.rect.width * 0.5f - rt.rect.width * 0.5f);
         min_y = root.position.y - (root.rect.height * 0.5f - rt.rect.height * 0.5f);
