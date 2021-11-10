@@ -43,7 +43,6 @@ public class PhotoGraphPanel: MonoBehaviour
 
     private void ShowPhotos()
     {
-      
       GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
       InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
       script.ToggleInventory();
@@ -56,7 +55,9 @@ public class PhotoGraphPanel: MonoBehaviour
 
     private void TakePicture()
     {
-        //--TODO  判断拍照区域是否有道具
+        //--TODO  判断拍照区域是否有道具 -- 可在此处获得当前拍照发现的道具ID
+        PropMgr.Instance.CheckProposBeFound(cameraAperture.position,cameraAperture.rect.width,cameraAperture.rect.height,root.rect);
+        
         
         photo.localScale = Vector3.one;
         photo.localPosition = Vector3.zero;
