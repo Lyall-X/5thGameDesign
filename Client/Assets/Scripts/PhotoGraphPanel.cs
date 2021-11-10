@@ -63,7 +63,8 @@ public class PhotoGraphPanel: MonoBehaviour
         photo.localPosition = Vector3.zero;
         photo.localEulerAngles = Vector3.zero;
         photo.gameObject.SetActive(true);
-        image.texture = ScreenShot(Camera.main, cameraAperture);
+        //TODO 照片命名
+        image.texture = ScreenShot(Camera.main, cameraAperture,"photo");
 
         Sequence sequence = DOTween.Sequence();
         sequence.Append(photo.DORotate(new Vector3(0,0,-15), 0.1f));
@@ -73,7 +74,7 @@ public class PhotoGraphPanel: MonoBehaviour
     }
     
 
-    public Texture2D ScreenShot(Camera camera,RectTransform cameraAperture)
+    public Texture2D ScreenShot(Camera camera,RectTransform cameraAperture,string name = "screenshot")
     {
         RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 0);//渲染一张图
         camera.targetTexture = rt;
@@ -93,8 +94,8 @@ public class PhotoGraphPanel: MonoBehaviour
         GameObject.Destroy(rt);
         byte[] bytes = screenShot.EncodeToPNG();//设置文件类型
         string filename = "";
-#if UNITY_EDITOR_OSX 
-        filename = Application.dataPath + "/Resources/ScreenShot/screenshot.png";//存放路径
+#if UNITY_EDITOR_OSX
+        filename = Application.dataPath + "/Resources/ScreenShot/" + name + ".png";//存放路径
         System.IO.File.WriteAllBytes(filename, bytes);//根据上边的类型以及路径写入文件夹中去
 #elif UNITY_EDITOR_WIN
         filename = Application.dataPath + "/Resources/ScreenShot/screenshot.png";//存放路径

@@ -8,6 +8,16 @@ public class Prop : MonoBehaviour
     public int id;
     public Sprite icon;
     public bool isFind;
+
+    public void Init(bool isfind = false)
+    {
+        isFind = isfind;
+        if (isfind)
+        {
+            //--TODO 道具初始化状态
+        }
+    }
+
     private void ShowHightLight()
     {
         //TODO-- 高光效果
@@ -26,7 +36,7 @@ public class Prop : MonoBehaviour
  
         //设置锚点位置，锚点在左下角
         ptViewport = new Vector3(ptViewport.x * rect.width, ptViewport.y * rect.height, 0);
-        Debug.Log("ptViewport" + ptViewport);
+        // Debug.Log("ptViewport" + ptViewport);
 
         if (ptViewport.x > targetPos.x + wight*0.5f)
         {

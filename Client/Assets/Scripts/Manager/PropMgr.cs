@@ -16,6 +16,11 @@ public class PropMgr : MMSingleton<PropMgr>
     public void Init()
     {
         propsList = FindObjectsOfType<Prop>().ToList();
+        for (int i = 0; i < propsList.Count; i++)
+        {
+            //TODO 初始化道具的获取状态
+            propsList[i].Init();
+        }
     }
 
     // Update is called once per frame
