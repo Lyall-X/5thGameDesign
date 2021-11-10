@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using  DG.Tweening;
+using MoreMountains.InventoryEngine;
 
 public class PhotoGraphPanel: MonoBehaviour
 {
@@ -42,7 +43,10 @@ public class PhotoGraphPanel: MonoBehaviour
 
     private void ShowPhotos()
     {
-        //TODO 打开相册界面
+      
+      GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
+      InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
+      script.ToggleInventory();
     }
 
     private void Close()
@@ -87,12 +91,14 @@ public class PhotoGraphPanel: MonoBehaviour
         RenderTexture.active = null;
         GameObject.Destroy(rt);
         byte[] bytes = screenShot.EncodeToPNG();//设置文件类型
+        string filename = "";
 #if UNITY_EDITOR_OSX 
-        string filename = Application.dataPath + "/Resources/ScreenShot/screenshot.png";//存放路径
-#elif UNITY_EDITOR_WIN
-        string filename = Application.dataPath + "/Resources/ScreenShot/screenshot.png";//存放路径
-#endif
+        filename = Application.dataPath + "/Resources/ScreenShot/screenshot.png";//存放路径
         System.IO.File.WriteAllBytes(filename, bytes);//根据上边的类型以及路径写入文件夹中去
+#elif UNITY_EDITOR_WIN
+        filename = Application.dataPath + "/Resources/ScreenShot/screenshot.png";//存放路径
+        System.IO.File.WriteAllBytes(filename, bytes);//根据上边的类型以及路径写入文件夹中去
+#endif
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();//刷新，这步很关键，否则后面调用图片时没有。
 #endif

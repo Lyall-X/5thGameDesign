@@ -56,6 +56,7 @@ public class DragCheck : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             float x = globalMousePos.x, y = globalMousePos.y;
             rt.position = CheckPos(x, y);
+            rt.localPosition = new Vector3(rt.localPosition.x, rt.localPosition.y, 0);
         }
     }
  
