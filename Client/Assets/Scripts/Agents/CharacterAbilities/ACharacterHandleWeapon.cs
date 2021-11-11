@@ -16,15 +16,13 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
 
   protected override void HandleInput ()
   {
-    // if (_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown && !photoCanvas.activeSelf)
-    // {
-    //   PhotoGraphPanel script = photoCanvas.GetComponent<PhotoGraphPanel>();
-    //   script.Show();
-    // }
-    if (_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown && !photoCanvas.activeSelf)
+    if (_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
     {
       PhotoGraphPanel script = photoCanvas.GetComponent<PhotoGraphPanel>();
-      script.Show();
+      if (!photoCanvas.activeSelf)
+        script.Show();
+      else
+        script.gameObject.SetActive(false);
     }
     
   }

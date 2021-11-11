@@ -8,9 +8,13 @@ using UnityEngine;
 public class PropMgr : MMSingleton<PropMgr>
 {
     private List<Prop> propsList;
+    private List<GameObject> itemList;
+
     protected override void Awake()
     {
         base.Awake();
+        propsList = new List<Prop>();
+        itemList = new List<GameObject>();
         Init();
     }
     public void Init()
@@ -25,17 +29,28 @@ public class PropMgr : MMSingleton<PropMgr>
 
     // Update is called once per frame
 
-    public List<int> CheckProposBeFound(Vector3 targetPos,float wight,float hight,Rect rect)
+    public GameObject CheckProposBeFound(Vector3 targetPos,float wight,float hight,Rect rect)
     {
-        List<int> propIdList = new List<int>();
+        List<Prop> propIdList = new List<Prop>();
         for (int i = 0; i < propsList.Count; i++)
         {
             if (propsList[i].CheckBeFound(targetPos,wight,hight,rect))
             {
-                propIdList.Add(propsList[i].id);
+                propIdList.Add(propsList[i]);
             }
         }
+        if (propIdList.Count > 0 && itemList.Count < 4)
+        {
+            GameObject parent = new GameObject(itemList.Count.ToString());
+            parent.transform.position = new Vector3(0,0,0);
+            foreach(Prop item in propIdList)
+            {
+              item.gameObject.transform.parent = parent.transform;
+            }
+            itemList.Add(parent);
+            return parent;
+        }
         
-        return propIdList;
+        return null;
     }
 }
