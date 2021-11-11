@@ -22,7 +22,7 @@ public class Prop : MonoBehaviour
     {
         //TODO-- 高光效果
         isFind = true;
-        transform.localScale = Vector3.one * 1.5f;
+        // transform.localScale = Vector3.one * 1.5f;
     }
 
     public bool CheckBeFound(Vector3 targetPos,float wight,float hight,Rect rect)
