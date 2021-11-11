@@ -31,9 +31,9 @@ public class PhotoGraphPanel: MonoBehaviour
 
     public void Show()
     {
-      GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
-      InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
-      script.CloseInventory();
+      // GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
+      // InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
+      // script.CloseInventory();
 
       gameObject.SetActive(!gameObject.activeSelf);
       photo.gameObject.SetActive(false);
