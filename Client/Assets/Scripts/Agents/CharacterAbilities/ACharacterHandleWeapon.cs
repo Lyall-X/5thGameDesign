@@ -16,14 +16,20 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
 
   protected override void HandleInput ()
   {
-    if (_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+    if (_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
     {
-      PhotoGraphPanel script = photoCanvas.GetComponent<PhotoGraphPanel>();
-      if (!photoCanvas.activeSelf)
-        script.Show();
-      else
-        script.gameObject.SetActive(false);
+      PropMgr.Instance.PicObj = null;
+      PropMgr.Instance.UsingObj = null;
     }
-    
+    if (PropMgr.Instance.PicObj)
+    {
+      if (!PropMgr.Instance.UsingObj)
+      {
+        PropMgr.Instance.UsingObj = GameObject.Instantiate(PropMgr.Instance.PicObj);
+      }
+      Vector3 pos = Camera.main.WorldToScreenPoint(PropMgr.Instance.UsingObj.transform.position);
+      Vector3 m_MousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, pos.z);
+      PropMgr.Instance.UsingObj.transform.position = Camera.main.ScreenToWorldPoint(m_MousePos);
+    }
   }
 }

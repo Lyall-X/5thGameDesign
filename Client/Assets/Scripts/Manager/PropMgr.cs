@@ -9,6 +9,8 @@ public class PropMgr : MMSingleton<PropMgr>
 {
     private List<Prop> propsList;
     private List<GameObject> itemList;
+    public GameObject UsingObj = null;
+    public GameObject PicObj = null;
 
     protected override void Awake()
     {
@@ -37,15 +39,19 @@ public class PropMgr : MMSingleton<PropMgr>
             if (propsList[i].CheckBeFound(targetPos,wight,hight,rect))
             {
                 propIdList.Add(propsList[i]);
+                break;
             }
         }
         if (propIdList.Count > 0 && itemList.Count < 4)
         {
             GameObject parent = new GameObject(itemList.Count.ToString());
-            parent.transform.position = new Vector3(0,0,0);
+            parent.transform.position = new Vector3(-9999,-9999,0);
             foreach(Prop item in propIdList)
             {
-              item.gameObject.transform.parent = parent.transform;
+              GameObject obj = GameObject.Instantiate(item.gameObject);
+              obj.gameObject.transform.parent = parent.transform;
+              obj.gameObject.transform.localPosition = Vector3.zero;
+              break;
             }
             itemList.Add(parent);
             return parent;

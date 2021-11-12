@@ -5,32 +5,19 @@ using UnityEngine.UI;
 
 public class Prop : MonoBehaviour
 {
-    public int id;
-    public Sprite icon;
-    public bool isFind;
 
-    public void Init(bool isfind = false)
+    public void Init()
     {
-        isFind = isfind;
-        if (isfind)
-        {
-            //--TODO 道具初始化状态
-        }
     }
 
     private void ShowHightLight()
     {
         //TODO-- 高光效果
-        isFind = true;
         // transform.localScale = Vector3.one * 1.5f;
     }
 
     public bool CheckBeFound(Vector3 targetPos,float wight,float hight,Rect rect)
     {
-        if (isFind)
-        {
-            return false;
-        }
         //--检查是否被发现 --即是否在拍照范围
         Vector3 ptViewport = Camera.main.WorldToViewportPoint(transform.position);
  

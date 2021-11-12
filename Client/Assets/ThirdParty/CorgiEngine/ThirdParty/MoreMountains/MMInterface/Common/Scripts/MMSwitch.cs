@@ -41,14 +41,14 @@ namespace MoreMountains.MMInterface
 
 		public virtual void InitializeState()
 		{
-			if (CurrentSwitchState == SwitchStates.Left)
-			{
-				_animator.Play ("RollLeft");
-			}
-			else
-			{
-				_animator.Play ("RollRight");
-			}
+			// if (CurrentSwitchState == SwitchStates.Left)
+			// {
+			// 	_animator.Play ("RollLeft");
+			// }
+			// else
+			// {
+			// 	_animator.Play ("RollRight");
+			// }
 		}
 
 		/// <summary>

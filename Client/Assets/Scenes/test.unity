@@ -807,9 +807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061746dc47b9f43bf9c0a93737b231af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  icon: {fileID: 0}
-  isFind: 0
 --- !u!1001 &3904882553879096952
 PrefabInstance:
   m_ObjectHideFlags: 0

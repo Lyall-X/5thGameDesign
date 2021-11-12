@@ -94,6 +94,17 @@ namespace MoreMountains.CorgiEngine
 			StartCoroutine (LoadFirstLevel ());
 		}
 
+    public virtual void ButtonExit()
+		{
+			#if UNITY_EDITOR
+      UnityEditor.EditorApplication.isPlaying = false;
+      #else
+      Application.Quit();
+      #endif
+		}
+    
+    
+
 		/// <summary>
 		/// Loads the next level.
 		/// </summary>

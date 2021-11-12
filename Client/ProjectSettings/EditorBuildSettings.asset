@@ -5,21 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SplashScreen.unity
     guid: 7b96552fd1198fa4eaae54a2f975645e
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: b9cf7e391a5874f80a0485164885fe54
   - enabled: 1
     path: Assets/Scenes/LoadingScreen.unity
     guid: 888394d52616e5e42b3b54c3f2bbd3eb
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1.unity
+    path: "Assets/Scenes/Levels/\u7B2C\u4E00\u5173\uFF1A\u6708\u7403\u63A2\u7D22.unity"
     guid: f02456ee720b59c46807dfa554428715
-  - enabled: 0
-    path: Assets/Scenes/MainScene.unity
+  - enabled: 1
+    path: "Assets/Scenes/Levels/\u7B2C\u4E09\u5173\uFF1A\u9690\u85CF\u7684\u79D8\u5BC6.unity"
     guid: d345d4682c5cc1b4dba798f84428570c
   - enabled: 1
-    path: Assets/Scenes/StartScreen.unity
-    guid: b9cf7e391a5874f80a0485164885fe54
+    path: "Assets/Scenes/Levels/\u7B2C\u4E8C\u5173\uFF1A\u65E0\u754F\u661F\u7403.unity"
+    guid: ef36fc9d728bd8941aa6ddce804e6fae
   - enabled: 0
     path: Assets/ThirdParty/CorgiEngine/ThirdParty/MoreMountains/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreen.unity
     guid: d89b77a7a68c1844280c6ff2e49f95b8

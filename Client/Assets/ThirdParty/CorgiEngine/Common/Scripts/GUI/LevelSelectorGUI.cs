@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
+using MoreMountains.Tools;
+using MoreMountains.MMInterface;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -18,6 +22,10 @@ namespace MoreMountains.CorgiEngine
 		/// the offset to apply to the level name 
 		[Tooltip("the offset to apply to the level name ")]
 		public Vector2 LevelNameOffset;
+
+    public GameObject map1;
+    public GameObject map2;
+    public GameObject map3;
 
 		/// <summary>
 		/// On start, disables the HUD and optionally the level name panels
@@ -42,6 +50,23 @@ namespace MoreMountains.CorgiEngine
 			LevelNameText.text=levelName;
 			LevelNamePanel.enabled=true;
 			LevelNameText.enabled=true;
+      if (levelName == "第一关：月球探索")
+      {
+        map1.SetActive(true);
+        map2.SetActive(false);
+        map3.SetActive(false);
+      }else if (levelName == "第二关：无畏星球")
+      {
+        map1.SetActive(false);
+        map2.SetActive(true);
+        map3.SetActive(false);
+      }
+      else if (levelName == "第三关：隐藏的秘密")
+      {
+        map1.SetActive(false);
+        map2.SetActive(false);
+        map3.SetActive(true);
+      }
 		}
 
 		/// <summary>
@@ -52,6 +77,18 @@ namespace MoreMountains.CorgiEngine
 			LevelNamePanel.enabled=false;
 			LevelNameText.enabled=false;
 		}
+
+    public virtual void ButtonPressed()
+    {
+      StartCoroutine (LoadFirstLevel ());
+    }
+
+    protected virtual IEnumerator LoadFirstLevel()
+		{
+			yield return new WaitForSeconds (1f);
+			MMSceneLoadingManager.LoadScene ("StartScreen");
+		}
 	}
+
 
 }
