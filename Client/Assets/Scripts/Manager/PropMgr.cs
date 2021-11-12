@@ -9,7 +9,6 @@ public class PropMgr : MMSingleton<PropMgr>
 {
     private List<Prop> propsList;
     private List<GameObject> itemList;
-    public GameObject UsingObj = null;
     public GameObject PicObj = null;
 
     protected override void Awake()
@@ -42,7 +41,7 @@ public class PropMgr : MMSingleton<PropMgr>
                 break;
             }
         }
-        if (propIdList.Count > 0 && itemList.Count < 4)
+        if (propIdList.Count > 0)
         {
             GameObject parent = new GameObject(itemList.Count.ToString());
             parent.transform.position = new Vector3(-9999,-9999,0);

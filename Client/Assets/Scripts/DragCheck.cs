@@ -19,12 +19,6 @@ public class DragCheck : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         min_y = root.position.y - (root.rect.height * 0.5f - rt.rect.height * 0.5f);
         max_y = root.position.y + (root.rect.height * 0.5f - rt.rect.height * 0.5f);
     }
-	
-    // Update is called once per frame
-    void Update ()
-    {
-		
-    }
  
     // begin dragging
     public void OnBeginDrag(PointerEventData eventData)

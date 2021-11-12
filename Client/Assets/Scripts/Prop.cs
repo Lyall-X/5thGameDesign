@@ -25,19 +25,19 @@ public class Prop : MonoBehaviour
         ptViewport = new Vector3(ptViewport.x * rect.width, ptViewport.y * rect.height, 0);
         // Debug.Log("ptViewport" + ptViewport);
 
-        if (ptViewport.x > targetPos.x + wight*0.5f)
+        if (ptViewport.x + 10> targetPos.x + wight*0.5f)
         {
             return false;
         }
-        else if (ptViewport.x < targetPos.x - wight*0.5f)
+        else if (ptViewport.x - 10 < targetPos.x - wight*0.5f)
         {
             return false;
         }
-        else if (ptViewport.y > targetPos.y + hight*0.5f)
+        else if (ptViewport.y + 10 > targetPos.y + hight*0.5f)
         {
             return false;
         }
-        else if (ptViewport.y < targetPos.y - hight*0.5f)
+        else if (ptViewport.y - 10 < targetPos.y - hight*0.5f)
         {
             return false;
         }

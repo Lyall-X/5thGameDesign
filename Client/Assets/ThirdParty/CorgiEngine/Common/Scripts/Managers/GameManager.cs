@@ -279,7 +279,7 @@ namespace MoreMountains.CorgiEngine
 			GUIManager.Instance.RefreshPoints ();
 		}
 
-		protected virtual void SetActiveInventoryInputManager(bool status)
+		public virtual void SetActiveInventoryInputManager(bool status)
 		{
 			_inventoryInputManager = GameObject.FindObjectOfType<InventoryInputManager> ();
 			if (_inventoryInputManager != null)
