@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: rabbit_animoverride
+  m_Controller: {fileID: 9100000, guid: 61d870ee06a7ed640a3ff34bf793f084, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 7cf27273fc15c9f42a440327f9348130, type: 2}
+    m_OverrideClip: {fileID: 370152361807061221, guid: 083d8b4741ae68e4195c11b1be1eeaea,
+      type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ca5312701c4d24a4a8de164ff4600582, type: 2}
+    m_OverrideClip: {fileID: 6481853642175062465, guid: 083d8b4741ae68e4195c11b1be1eeaea,
+      type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 41a287990f9f5a24e9eee7eafa44c734, type: 2}
+    m_OverrideClip: {fileID: -7530030473211769090, guid: 083d8b4741ae68e4195c11b1be1eeaea,
+      type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 666d9147857681940b610fc10155c576, type: 2}
+    m_OverrideClip: {fileID: 4459931554101183443, guid: 083d8b4741ae68e4195c11b1be1eeaea,
+      type: 2}
