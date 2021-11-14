@@ -38,6 +38,11 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
           {
             c2d.enabled = true;
           }
+          Rigidbody2D b2d = child.gameObject.GetComponent<Rigidbody2D>();
+          if (b2d)
+          {
+            b2d.gravityScale = 1;
+          }
         }
       }
       else
@@ -65,6 +70,11 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
           if (c2d)
           {
             c2d.enabled = false;
+          }
+          Rigidbody2D b2d = child.gameObject.GetComponent<Rigidbody2D>();
+          if (b2d)
+          {
+            b2d.gravityScale = 0;
           }
         }
         isUsing = true;
