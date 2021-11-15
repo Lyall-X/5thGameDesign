@@ -6465,7 +6465,7 @@ PrefabInstance:
     - target: {fileID: 5934664666388869522, guid: 6732cd74ab1c5b34db5046b301051331,
         type: 3}
       propertyPath: m_Text
-      value: "\u8BD5\u73A9\u573A\u666F\n<color=black>\u76F8\u673A </color>\u81EA\u52A8\u88C5\u5907\n\u79FB\u52A8\uFF1A<color=yellow>w,a,s,d</color>\n\u8DF3\u8DC3\uFF1A<color=yellow>\u7A7A\u683C</color>\n\u76F8\u518C\uFF1A<color=yellow>i</color>\n\u6682\u505C\uFF1A<color=yellow>Esc</color>"
+      value: "\u8BD5\u73A9\u573A\u666F\n<color=black>\u76F8\u673A </color>\u81EA\u52A8\u88C5\u5907\n\u6682\u505C\uFF1A<color=yellow>Esc</color>\n\u51C6\u5907\u62CD\u7167\uFF1A<color=yellow>\u5DE6\u952E</color>\n\u62CD\u7167\uFF1A<color=yellow>F</color>\n\u53D6\u6D88\u62CD\u7167\uFF1A<color=yellow>\u53F3\u952E</color>"
       objectReference: {fileID: 0}
     - target: {fileID: 5934664667648915954, guid: 6732cd74ab1c5b34db5046b301051331,
         type: 3}
