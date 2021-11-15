@@ -8,6 +8,7 @@ TagManager:
   - Music
   - Background
   - NoMask
+  - nogravity
   layers:
   - Default
   - TransparentFX
