@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5629890088072540381
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mat_Common_107
+  m_Shader: {fileID: 4800000, guid: 83700e9cf31317946ba4221f6e0701c3, type: 3}
+  m_ShaderKeywords: _AUTODISSOLVE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Additive:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base:
+        m_Texture: {fileID: 2800000, guid: 063f6bc315da44e439ebc7e8d757f4af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DisTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dissolve:
+        m_Texture: {fileID: 2800000, guid: c06913806699c49449c63177d834906c, type: 3}
+        m_Scale: {x: 1.35, y: 1.35}
+        m_Offset: {x: 0, y: 0}
+    - _Erosion_Texture:
+        m_Texture: {fileID: 2800000, guid: 83f4dba76e6c7854fa3819712e2c78ff, type: 3}
+        m_Scale: {x: 0.75, y: 0.75}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 063f6bc315da44e439ebc7e8d757f4af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: 2ab7213d0c343294399ddb8ee61ded22, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VertexAni:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _3Color: 0
+    - _AdditiveU_Speed: 0
+    - _AdditiveV_Speed: 0
+    - _AlphaClip: 0
+    - _AlphaCutoff: 0.5
+    - _AutoAdditive: 0
+    - _AutoDissolve: 1
+    - _AutoDissolveWidth: 0
+    - _AutoFresnel: 0
+    - _AutoMask: 0
+    - _AutoNoise: 0
+    - _AutoVertexAni: 0
+    - _BaseU_Speed: 0
+    - _BaseV_Speed: 0
+    - _BlendMode: 1
+    - _Cull: 0
+    - _DissolveByBaseAlpha: 0
+    - _DissolvePreview: 0
+    - _DissolveU_Speed: 0
+    - _DissolveV_Speed: 0
+    - _DissolveWidth: 0
+    - _DissolveWidthIntensity: 0
+    - _DstBlend: 10
+    - _EdgeSharpness: 5
+    - _FogOn: 0
+    - _FrenelBRF: 0.04
+    - _Fres: 0
+    - _FresAlphaAdd: 0
+    - _FresAlphaInten: 1
+    - _FresPow: 1
+    - _FresRemapMax: 1
+    - _FresRemapMin: 0
+    - _FresSideInten: 1
+    - _FresnelIntensity: 1
+    - _FresnelPower: 5
+    - _MaskRotato: 0
+    - _MaskU_Speed: 0
+    - _MaskV_Speed: 0
+    - _Mode: 1
+    - _NoiseIntersity: 0
+    - _NoiseU_Speed: 0
+    - _NoiseV_Speed: 0
+    - _OffsetFactor: 0
+    - _OffsetUnits: 0
+    - _OpacityIntersity: 1
+    - _Power_color: 1
+    - _RECEIVE_SHADOWS: 0
+    - _RenderFace: 0
+    - _Sin: 0
+    - _SinRate: 1
+    - _SinRemapMax: 1
+    - _SinRemapMin: 0
+    - _SrcBlend: 5
+    - _Tex01AlphaInten: 1
+    - _Tex01ColorInten: 1
+    - _Tex01PanU: 0
+    - _Tex01PanV: 0
+    - _Tex01RemapMax: 1
+    - _Tex01RemapMin: 0
+    - _Tex01Type: 1
+    - _Tex02Inten: 0
+    - _Tex02PanU: 0
+    - _Tex02PanV: 0
+    - _Tex02Type: 0
+    - _Tex03AlphaInten: 1
+    - _Tex03ColorInten: 1
+    - _Tex03DissolveOffset: 0
+    - _Tex03RemapMax: 1
+    - _Tex03RemapMin: 0
+    - _Tex03SideWidth: 0.1
+    - _Tex03Type: 0
+    - _Tex04Inten: 1
+    - _Tex04OffsetStep: 0
+    - _Tex04Type: 0
+    - _TwoFace: 0
+    - _VertexAniScale: 0
+    - _VertexU_Speed: 0
+    - _VertexV_Speed: 0
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _contrast: 1
+    - _power: 1
+    m_Colors:
+    - _AdditiveColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 1.4767848, g: 1.4767848, b: 1.4767848, a: 1}
+    - _ColorBlack: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorLight: {r: 2, g: 2, b: 2, a: 1}
+    - _ColorMiddle: {r: 1, g: 1, b: 1, a: 1}
+    - _DisCol: {r: 1, g: 1, b: 1, a: 1}
+    - _DisColB: {r: 1, g: 1, b: 1, a: 1}
+    - _DissWidthColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresCol: {r: 1, g: 1, b: 1, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 0}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}

@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5459209482056461131
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mat_Common_011
+  m_Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHACHANNEL_R _AUTODISSOLVE_ON _COLORCHANNEL_R _DISSOLVECHANNEL_R
+    _MASKCHANNEL_R _NOISECHANNEL_R
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Additive:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base:
+        m_Texture: {fileID: 2800000, guid: 2eada7a21e09193428ffccded2b6511e, type: 3}
+        m_Scale: {x: 2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dissolve:
+        m_Texture: {fileID: 2800000, guid: 56a8f0f4e69dc2745beb86e2ca8602e4, type: 3}
+        m_Scale: {x: 0.6, y: 0.6}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f116bca76ee83874f984f75deb38e336, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 37ae48db695ed3d4387b945b4c791be5, type: 3}
+        m_Scale: {x: 1, y: 2.18}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: 061e2d50cbd068f4086e60250963a50b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VertexAni:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _3Color: 0
+    - _AdditiveU_Speed: 0
+    - _AdditiveV_Speed: 0
+    - _AlphaChannel: 0
+    - _AlphaClip: 0
+    - _AlphaCutoff: 0.5
+    - _AutoAdditive: 0
+    - _AutoDissolve: 1
+    - _AutoDissolveWidth: 0
+    - _AutoFresnel: 0
+    - _AutoMask: 0
+    - _AutoNoise: 0
+    - _AutoVertexAni: 0
+    - _BasePower: 1
+    - _BaseU_Speed: 0
+    - _BaseV_Speed: 0
+    - _BlendMode: 1
+    - _ColorChannel: 0
+    - _Contrast: 1
+    - _Cull: 0
+    - _DissolveByBaseAlpha: 0.15
+    - _DissolveChannel: 0
+    - _DissolvePreview: 0
+    - _DissolveU_Speed: 0
+    - _DissolveV_Speed: 0
+    - _DissolveWidth: 0
+    - _DissolveWidthIntensity: 0
+    - _DstBlend: 10
+    - _EdgeSharpness: 12
+    - _FrenelBRF: 0.04
+    - _FresnelAlpha: 0
+    - _FresnelIntensity: 1
+    - _FresnelPower: 5
+    - _FresnelScale: 1
+    - _MaskChannel: 0
+    - _MaskRotato: 0
+    - _MaskU_Speed: 0
+    - _MaskV_Speed: 0
+    - _Mul: 0
+    - _NoiseChannel: 0
+    - _NoiseIntersity: 0
+    - _NoiseU_Speed: 0
+    - _NoiseV_Speed: 0
+    - _OpacityIntersity: 1.2
+    - _Power: 2
+    - _RECEIVE_SHADOWS: 0
+    - _RenderFace: 0
+    - _SrcBlend: 5
+    - _TwoFace: 0
+    - _U: 0
+    - _UMask: 0
+    - _V: 0
+    - _VMask: 0
+    - _VertexAniScale: 0
+    - _VertexU_Speed: 0
+    - _VertexV_Speed: 0
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _contrast: 1
+    - _power: 1
+    m_Colors:
+    - _AdditiveColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_Refine: {r: 1, g: 1, b: 0, a: 0}
+    - _Color: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
+    - _ColorBlack: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorLight: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
+    - _ColorMiddle: {r: 1, g: 1, b: 1, a: 1}
+    - _DissWidthColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 0}
