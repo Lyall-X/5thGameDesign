@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Common_003
+  m_Name: Mat_Common_001
   m_Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHACHANNEL_R _AUTODISSOLVE_ON _COLORCHANNEL_R _DISSOLVECHANNEL_R
     _MASKCHANNEL_R _NOISECHANNEL_R _RECEIVE_SHADOWS_OFF

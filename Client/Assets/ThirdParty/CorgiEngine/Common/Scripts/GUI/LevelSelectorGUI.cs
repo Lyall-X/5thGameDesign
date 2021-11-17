@@ -26,6 +26,7 @@ namespace MoreMountains.CorgiEngine
     public GameObject map1;
     public GameObject map2;
     public GameObject map3;
+    public GameObject mapselect;
 
 		/// <summary>
 		/// On start, disables the HUD and optionally the level name panels

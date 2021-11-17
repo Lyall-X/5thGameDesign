@@ -45,6 +45,23 @@ namespace MoreMountains.CorgiEngine
 		protected BoxCollider2D _boxCollider2D;
 		protected Animator _animator;
 
+
+    public void Left()
+    {
+      InputManager.Instance.SetMovement(new Vector2(-1,0));
+			InputMovement();
+			MoveCharacter();
+			AnimateCharacter();
+    }
+    
+    public void Right()
+    {
+      InputManager.Instance.SetMovement(new Vector2(1,0));
+			InputMovement();
+			MoveCharacter();
+			AnimateCharacter();
+    }
+
 		/// <summary>
 		/// Initialization
 		/// </summary>
@@ -230,7 +247,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// When the jump button is pressed
 		/// </summary>
-		protected virtual void ButtonPressed()
+		public virtual void ButtonPressed()
 		{
 			if (_currentPathElement.GetComponent<LevelSelector>()!=null)
 			{

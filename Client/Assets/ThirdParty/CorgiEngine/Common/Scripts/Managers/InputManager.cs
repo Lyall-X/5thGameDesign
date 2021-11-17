@@ -394,11 +394,11 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="movement">Movement.</param>
 		public virtual void SetMovement(Vector2 movement)
 		{
-			if (IsMobile && InputDetectionActive)
-			{
+			// if (IsMobile && InputDetectionActive)
+			// {
 				_primaryMovement.x = movement.x;
 				_primaryMovement.y = movement.y;	
-			}
+			// }
 		}
 
 		/// <summary>
