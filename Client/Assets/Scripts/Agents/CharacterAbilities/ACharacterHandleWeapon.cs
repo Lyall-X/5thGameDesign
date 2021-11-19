@@ -68,10 +68,20 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
     {
       if (!isUsing)
       {
+        
+        Screen.lockCursor = true;
         PropMgr.Instance.PicObj = GameObject.Instantiate(PropMgr.Instance.PicObj);
 
         foreach (Transform child in PropMgr.Instance.PicObj.transform)
         {
+          Sequence sequence = DOTween.Sequence();
+          Material ma = child.gameObject.GetComponent<Renderer>().material;
+          Color cl = ma.color;
+          child.gameObject.GetComponent<Renderer>().material.color =  new Color(cl.r, cl.g, cl.b, 0f);
+          sequence.Append(ma.DOColor(new Color(cl.r, cl.g, cl.b, 1f), 2f));
+          sequence.onComplete = () => {
+            Screen.lockCursor = false;
+          };
           Collider2D c2d = child.gameObject.GetComponent<Collider2D>();
           if (c2d)
           {
@@ -83,6 +93,7 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
       Vector3 pos = Camera.main.WorldToScreenPoint(PropMgr.Instance.PicObj.transform.position);
       Vector3 m_MousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, pos.z);
       PropMgr.Instance.PicObj.transform.position = Camera.main.ScreenToWorldPoint(m_MousePos);
+      
     }
   }
 }

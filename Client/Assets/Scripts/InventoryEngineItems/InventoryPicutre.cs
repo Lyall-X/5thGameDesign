@@ -9,6 +9,7 @@ using MoreMountains.CorgiEngine;
 public class InventoryPicutre : InventoryItem 
 {
   public override bool IsUsable {  get { return true;  } }
+
   public override bool Use()
   {
     base.Use();
