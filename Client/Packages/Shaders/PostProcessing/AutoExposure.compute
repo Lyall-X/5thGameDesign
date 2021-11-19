@@ -1,0 +1,152 @@
+﻿// Copyright 2020 X.D.Network, Inc. All Rights Reserved.
+
+/*=================================================================================
+   AutoExposure.compute
+
+   Author:      xiaojian
+
+   Desc:        Implement the Auto Exposure postprocessing
+ =================================================================================*/
+
+//#pragma enable_d3d11_debug_symbols
+
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel ClearHistogram_Main
+#pragma kernel Histogram_Main
+#pragma kernel AverageExposureValue_Main
+
+static const int THREAD_GROUP_SIZE_X = 16;
+static const int THREAD_GROUP_SIZE_Y = 8;
+static const int HISTOGRAM_SAMPLE_NUM = THREAD_GROUP_SIZE_X * THREAD_GROUP_SIZE_Y;
+
+float histogramMinEV;
+float histogramOneOverEVRange;
+float ecValue;
+float minEV;
+float maxEV;
+uint imageWidth;
+uint imageHeight;
+float lowPercent;
+float highPercent;
+float speedUp;
+float speedDown;
+float deltaTime;
+
+float ColorToLuminance(float3 color)
+{
+    return dot(color, float3(0.2127f, 0.7152f, 0.0722f));
+}
+
+float LuminanceToEV(float luminance)
+{
+    return log2(luminance * 100.0f / 12.5f);
+}
+
+float EVToLuminance(float ev)
+{
+    return exp2(ev) * 12.5f / 100.0f;
+}
+
+uint HDRToHistogramBin(float3 hdrColor)
+{
+    float luminance = ColorToLuminance(hdrColor);
+    luminance = max(luminance, 0.001f);
+    float ev = LuminanceToEV(luminance);
+
+    // Exposure compensation
+    ev = ev - ecValue;
+
+    // Calculate histogram bin
+    ev = (ev - histogramMinEV) * histogramOneOverEVRange;
+    ev = saturate(ev);
+    return (uint)(ev * (HISTOGRAM_SAMPLE_NUM - 1.0f));
+}
+
+float HistogramBinToEV(uint bin)
+{
+    return bin / (HISTOGRAM_SAMPLE_NUM - 1.0f) / histogramOneOverEVRange + histogramMinEV;
+}
+
+//--------------------------------------------------------------------------------------
+RWByteAddressBuffer clearHistogramBuffer;
+
+[numthreads(THREAD_GROUP_SIZE_X, THREAD_GROUP_SIZE_Y, 1)]
+void ClearHistogram_Main(uint group : SV_GroupIndex)
+{
+    clearHistogramBuffer.Store(group * 4, 0);
+}
+
+//--------------------------------------------------------------------------------------
+Texture2D hdrTexture;
+RWByteAddressBuffer histogramBuffer;
+
+groupshared uint histogramCountSharedBuffer[HISTOGRAM_SAMPLE_NUM];
+
+[numthreads(THREAD_GROUP_SIZE_X, THREAD_GROUP_SIZE_Y, 1)]
+void Histogram_Main(uint group : SV_GroupIndex, uint3 id : SV_DispatchThreadID)
+{
+    histogramCountSharedBuffer[group] = 0;
+    GroupMemoryBarrierWithGroupSync();
+
+    if (id.x < imageWidth && id.y < imageHeight)
+    {
+        float3 hdrColor = hdrTexture.Load(int3(id.xy, 0)).rgb;
+        uint binIndex = HDRToHistogramBin(hdrColor);
+        InterlockedAdd(histogramCountSharedBuffer[binIndex], 1);
+    }
+
+    GroupMemoryBarrierWithGroupSync();
+    histogramBuffer.InterlockedAdd(group * 4, histogramCountSharedBuffer[group]);
+}
+
+//--------------------------------------------------------------------------------------
+RWByteAddressBuffer histogramBufferAve;
+RWStructuredBuffer<float> debugBuffer;
+RWTexture2D<float> exposureTex;
+
+groupshared float evSharedBuffer[HISTOGRAM_SAMPLE_NUM];
+
+[numthreads(THREAD_GROUP_SIZE_X, THREAD_GROUP_SIZE_Y, 1)]
+void AverageExposureValue_Main(uint group : SV_GroupIndex, uint3 id : SV_DispatchThreadID)
+{
+    uint histogramBin = id.x * THREAD_GROUP_SIZE_Y + id.y;
+    float ev = HistogramBinToEV(histogramBin);
+    uint count = (uint)histogramBufferAve.Load(histogramBin * 4);
+    float v = ev * count;
+    evSharedBuffer[histogramBin] = v;
+
+    GroupMemoryBarrierWithGroupSync();
+
+    if (group == 0)
+    {
+        int totalCount = imageWidth * imageHeight;
+
+        float averageEV = 0.0f;
+        int averageCount = 0;
+        for (int i = 0; i < HISTOGRAM_SAMPLE_NUM; i++)
+        {
+            averageEV = averageEV + evSharedBuffer[i];
+        }
+        averageEV = averageEV / totalCount;
+        averageEV = clamp(averageEV, minEV, maxEV);
+        debugBuffer[0] = averageEV;
+
+        float lastFrameEV = debugBuffer[1];
+        float newEV = 0.0f;
+        if (lastFrameEV < averageEV)
+        {
+            newEV = lastFrameEV + speedUp * deltaTime;
+            newEV = min(newEV, averageEV);
+        }
+        else
+        {
+            newEV = lastFrameEV - speedDown * deltaTime;
+            newEV = max(newEV, averageEV);
+        }
+
+        debugBuffer[1] = newEV;
+
+        float newExposure = 1.0f / (EVToLuminance(newEV) * 9.6f);
+        exposureTex[uint2(0, 0)] = newExposure;
+    }
+}
