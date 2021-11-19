@@ -6,9 +6,12 @@ using UnityEngine.UI;
 using  DG.Tweening;
 using MoreMountains.InventoryEngine;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
+using MoreMountains.Feedbacks;
 
 public class PhotoGraphPanel: MonoBehaviour
 {
+  public float timeset;
     public Transform photo;
     public Button yesBtn, colseBtn, photoBtn, cameraBtn;
     public RawImage image;
@@ -41,28 +44,28 @@ public class PhotoGraphPanel: MonoBehaviour
     {
       GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
       InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
-      //       GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
-      // InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
       if (script.InventoryIsOpen)
       {
           script.CloseInventory();
       }
-      gameObject.SetActive(status);
-      photo.gameObject.SetActive(false);
-      cameraAperture.localPosition = Vector3.zero;
       
       if (status)
       {
         CameraController sc = mainCam.GetComponent<CameraController>();
         sc.CameraOffset = new Vector3(0,0,0);
-        InputManager.Instance.InputDetectionActive = false;
+        
+			  MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, timeset, 100000f, false, 0f, false);
       }
       else
       {
         CameraController sc = mainCam.GetComponent<CameraController>();
         sc.CameraOffset = new Vector3(0,3,0);
-        InputManager.Instance.InputDetectionActive = true;
+        MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
       }
+      photo.gameObject.SetActive(false);
+      cameraAperture.localPosition = Vector3.zero;
+      gameObject.SetActive(status);
+      
     }
 
     private void showCanmra()
@@ -85,6 +88,7 @@ public class PhotoGraphPanel: MonoBehaviour
 
     public void TakePicture()
     {
+        MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
         photo.localScale = Vector3.one;
         photo.localPosition = Vector3.zero;
         photo.localEulerAngles = Vector3.zero;

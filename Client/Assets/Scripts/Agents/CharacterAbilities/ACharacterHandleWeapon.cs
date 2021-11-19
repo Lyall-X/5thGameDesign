@@ -43,6 +43,12 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
           {
             child.gameObject.AddComponent<Rigidbody2D>();
           }
+          
+          Prop prop = child.gameObject.GetComponent<Prop>();
+          if (prop)
+          {
+            prop.putdown = true;
+          }
         }
       }
       else

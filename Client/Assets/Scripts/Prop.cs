@@ -2,9 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using  DG.Tweening;
 
 public class Prop : MonoBehaviour
 {
+public float timer = 10.0f;
+public bool putdown = false;
+    void Update() {
+      if (putdown)
+      {
+        timer -= Time.deltaTime;
+        if (timer - 1 <= 0) {
+            Sequence sequence = DOTween.Sequence();
+            Material ma = gameObject.GetComponent<Renderer>().material;
+            Color cl = ma.color;
+            sequence.Append(ma.DOColor(new Color(cl.r, cl.g, cl.b, 0), 1f));
+            sequence.onComplete = () => {
+              GameObject.Destroy(gameObject);
+            };
+        }
+      }
+    }
 
     public void Init()
     {
