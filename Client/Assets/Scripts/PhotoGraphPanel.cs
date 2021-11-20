@@ -75,6 +75,7 @@ public class PhotoGraphPanel: MonoBehaviour
     private void showCanmra()
     {
       this.Show(!gameObject.activeSelf);
+      MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
     }
 
     private void ShowPhotos()
