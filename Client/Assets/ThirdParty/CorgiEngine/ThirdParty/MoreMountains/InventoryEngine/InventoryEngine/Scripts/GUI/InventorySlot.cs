@@ -46,7 +46,10 @@ namespace MoreMountains.InventoryEngine
 				if (!InventoryItem.IsNull(item))
 				{
 					GameObject itemIcon = new GameObject("Icon", typeof(RectTransform));
-					itemIcon.transform.SetParent(this.transform);
+					Transform test = this.transform.Find("photo/mask22");
+					if (test == null)
+					 return;
+					itemIcon.transform.SetParent(test);
 					UnityEngine.UI.Image itemIconImage = itemIcon.AddComponent<Image>();
 					itemIconImage.sprite = item.Icon;
 					RectTransform itemRectTransform = itemIcon.GetComponent<RectTransform>();
@@ -58,7 +61,7 @@ namespace MoreMountains.InventoryEngine
 					if (item.Quantity>1)
 					{
 						GameObject textObject = new GameObject("Slot "+index+" Quantity", typeof(RectTransform));
-						textObject.transform.SetParent(this.transform);
+						textObject.transform.SetParent(test);
 						Text textComponent = textObject.AddComponent<Text>();
 						textComponent.text=item.Quantity.ToString();
 						textComponent.font=ParentInventoryDisplay.QtyFont;

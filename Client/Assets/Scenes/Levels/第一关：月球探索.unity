@@ -20144,11 +20144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -94.9
+      value: -67.91
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.43
+      value: -9.48
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20211,7 +20211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1055818602
 Transform:
   m_ObjectHideFlags: 0
@@ -20404,19 +20404,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
       propertyPath: ZoomSpeed
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
       propertyPath: ResetSpeed
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
       propertyPath: CameraSpeed
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
       propertyPath: MaximumZoom
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
       propertyPath: MinimumZoom
@@ -20427,8 +20427,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
+      propertyPath: LookAheadTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
       propertyPath: ManualUpDownLookDistance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486945693, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21a05b91e88ead4eaa250bbc9063756, type: 3}
@@ -48002,7 +48010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1873820045
 Transform:
   m_ObjectHideFlags: 0

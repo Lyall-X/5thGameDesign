@@ -17,6 +17,7 @@ public class InventoryPicutre : InventoryItem
     GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
     InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
     script.ToggleInventory();
+    GameObject aa = GameObject.Find(ItemID);
     PropMgr.Instance.PicObj = GameObject.Find(ItemID);
     return true;
   }

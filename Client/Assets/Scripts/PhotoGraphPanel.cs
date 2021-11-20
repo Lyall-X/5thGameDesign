@@ -53,6 +53,8 @@ public class PhotoGraphPanel: MonoBehaviour
       {
         CameraController sc = mainCam.GetComponent<CameraController>();
         sc.CameraOffset = new Vector3(0,0,0);
+        sc.ResetSpeed = 100f;
+        sc.MinimumZoom = sc.MaximumZoom = 3f;
         
 			  MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, timeset, 100000f, false, 0f, false);
       }
@@ -61,6 +63,8 @@ public class PhotoGraphPanel: MonoBehaviour
         CameraController sc = mainCam.GetComponent<CameraController>();
         sc.CameraOffset = new Vector3(0,3,0);
         MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
+        sc.ResetSpeed = 0.1f;
+        sc.MinimumZoom = sc.MaximumZoom = 5f;
       }
       photo.gameObject.SetActive(false);
       cameraAperture.localPosition = Vector3.zero;
@@ -95,7 +99,7 @@ public class PhotoGraphPanel: MonoBehaviour
         photo.gameObject.SetActive(true);
         //TODO 照片命名
         GameObject pic = PropMgr.Instance.CheckProposBeFound(cameraAperture.position,cameraAperture.rect.width,cameraAperture.rect.height,root.rect);
-        string picname = pic != null ? pic.name : "photo";
+        string picname = pic != null ? pic.name : "photoTextTakePicture";
         Texture2D texture = ScreenShot(Camera.main, cameraAperture, picname);
         image.texture = texture;
         

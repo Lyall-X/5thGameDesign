@@ -287,23 +287,23 @@ namespace MoreMountains.InventoryEngine
 		{
 			if (GetComponentInChildren<InventoryDisplayGrid>() == null)
 			{
-				GameObject inventoryGrid=new GameObject("InventoryDisplayGrid");
-				inventoryGrid.transform.parent=this.transform;
-				inventoryGrid.transform.position=transform.position;
-				inventoryGrid.transform.localScale=Vector3.one;
-				inventoryGrid.AddComponent<InventoryDisplayGrid>();
-				InventoryGrid = inventoryGrid.AddComponent<GridLayoutGroup>();
+				// GameObject inventoryGrid=new GameObject("InventoryDisplayGrid");
+				// inventoryGrid.transform.parent=this.transform;
+				// inventoryGrid.transform.position=transform.position;
+				// inventoryGrid.transform.localScale=Vector3.one;
+				// inventoryGrid.AddComponent<InventoryDisplayGrid>();
+				// InventoryGrid = inventoryGrid.AddComponent<GridLayoutGroup>();
 			}
 			if (InventoryGrid == null)
 			{
 				InventoryGrid = GetComponentInChildren<GridLayoutGroup>();
 			}
-			InventoryGrid.padding.top = PaddingTop;
-			InventoryGrid.padding.right = PaddingRight;
-			InventoryGrid.padding.bottom = PaddingBottom;
-			InventoryGrid.padding.left = PaddingLeft;
-			InventoryGrid.cellSize = SlotSize;
-			InventoryGrid.spacing = SlotMargin;
+			// InventoryGrid.padding.top = PaddingTop;
+			// InventoryGrid.padding.right = PaddingRight;
+			// InventoryGrid.padding.bottom = PaddingBottom;
+			// InventoryGrid.padding.left = PaddingLeft;
+			// InventoryGrid.cellSize = SlotSize;
+			// InventoryGrid.spacing = SlotMargin;
 		}
 
 		/// <summary>
@@ -485,13 +485,19 @@ namespace MoreMountains.InventoryEngine
 				SlotContainer[i].GetComponent<Image>().sprite = EmptySlotImage;    	
 			}
 			// we remove potential child objects
-			foreach(Transform child in SlotContainer[i].transform)
+			SlotContainer[i].transform.transform.Find("photo").gameObject.SetActive(false);
+			foreach(Transform child in SlotContainer[i].transform.Find("photo/mask22"))
 			{
+				
 				GameObject.Destroy(child.gameObject);
+
+				// if (child.gameObject.name != "photo")
+				// 	GameObject.Destroy(child.gameObject);
 			}
 			if (!InventoryItem.IsNull(TargetInventory.Content[i]))
 			{
 				// we redraw the icon
+				SlotContainer[i].transform.transform.Find("photo").gameObject.SetActive(true);
 				SlotContainer[i].GetComponent<InventorySlot>().DrawIcon(TargetInventory.Content[i],i);
 			}			   
 		}
@@ -499,7 +505,7 @@ namespace MoreMountains.InventoryEngine
 		/// <summary>
 		/// Creates the slot prefab to use in all slot creations
 		/// </summary>
-		protected virtual void InitializeSlotPrefab()
+		protected virtual void InitializeSlotPrefab(int i)
 		{
 			_slotPrefab = new GameObject();
 			_slotPrefab.AddComponent<RectTransform>();
@@ -522,6 +528,16 @@ namespace MoreMountains.InventoryEngine
 			_slotPrefab.MMGetComponentNoAlloc<CanvasGroup> ().blocksRaycasts = true;
 			_slotPrefab.MMGetComponentNoAlloc<CanvasGroup> ().ignoreParentGroups = false;
 
+			// _slotPrefab.AddComponent<Mask>();
+			if(_slotPrefab != null)
+			{
+				GameObject copy = GameObject .Instantiate(GameObject.FindGameObjectWithTag("PhotoImage"));
+				copy.name = "photo";
+				copy.transform.position = new Vector3(0,0,0);
+				copy.transform.SetParent(_slotPrefab.transform);
+			}
+	
+
 			_slotPrefab.name = "SlotPrefab";
 		}
 
@@ -541,10 +557,24 @@ namespace MoreMountains.InventoryEngine
 
 			if (_slotPrefab == null)
 			{
-				InitializeSlotPrefab ();
+				InitializeSlotPrefab (i);
 			}
 
 			GameObject theSlot = (GameObject)Instantiate(_slotPrefab);
+
+			if(i == 0)
+			{
+				theSlot.transform.Rotate(0,0,10);
+			}
+			if(i == 1)
+			{
+				theSlot.transform.Rotate(0,0,-11);
+			}
+			if(i == 2)
+			{
+				theSlot.transform.Rotate(0,0,-9);
+			}
+			theSlot.transform.Find("photo").gameObject.SetActive(false);
 
 			theSlot.transform.SetParent(InventoryGrid.transform);
 			theSlot.GetComponent<RectTransform>().localScale=Vector3.one;

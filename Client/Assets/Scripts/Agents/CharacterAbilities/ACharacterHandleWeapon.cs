@@ -33,6 +33,11 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
       {
         foreach (Transform child in PropMgr.Instance.PicObj.transform)
         {
+          MovingPlatform sc1 = child.gameObject.GetComponent<MovingPlatform>();
+          if (sc1)
+          {
+            sc1.enabled = true;
+          }
           Collider2D c2d = child.gameObject.GetComponent<Collider2D>();
           if (c2d)
           {
@@ -69,19 +74,33 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
       if (!isUsing)
       {
         
-        Screen.lockCursor = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         PropMgr.Instance.PicObj = GameObject.Instantiate(PropMgr.Instance.PicObj);
 
         foreach (Transform child in PropMgr.Instance.PicObj.transform)
         {
           Sequence sequence = DOTween.Sequence();
+          if (child.gameObject.GetComponent<Renderer>() == null )
+          {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            PropMgr.Instance.PicObj = null;
+            isUsing = false;
+          }
           Material ma = child.gameObject.GetComponent<Renderer>().material;
           Color cl = ma.color;
           child.gameObject.GetComponent<Renderer>().material.color =  new Color(cl.r, cl.g, cl.b, 0f);
-          sequence.Append(ma.DOColor(new Color(cl.r, cl.g, cl.b, 1f), 2f));
+          sequence.Append(ma.DOColor(new Color(cl.r, cl.g, cl.b, 1f), 1f));
           sequence.onComplete = () => {
-            Screen.lockCursor = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
           };
+          MovingPlatform sc1 = child.gameObject.GetComponent<MovingPlatform>();
+          if (sc1)
+          {
+            sc1.enabled = false;
+          }
           Collider2D c2d = child.gameObject.GetComponent<Collider2D>();
           if (c2d)
           {
