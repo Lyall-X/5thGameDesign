@@ -282,5 +282,14 @@ namespace MoreMountains.CorgiEngine
         {
             this.MMEventStopListening<CorgiEngineEvent>();
         }
+        
+		protected override void Move()
+        {
+            base.Move();
+			if(_currentPoint.Current.x > 0)
+                this.transform.localEulerAngles = new Vector3(0,-180,0);
+			else
+                this.transform.localEulerAngles = new Vector3(0,0,0);
+        }
     }
 }

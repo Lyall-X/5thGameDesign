@@ -400,6 +400,7 @@ namespace MoreMountains.Tools
 		{
 			_direction = - _direction;
 			_currentPoint.MoveNext();
+			
 		}
 
 		/// <summary>

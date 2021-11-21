@@ -54,17 +54,17 @@ public class PhotoGraphPanel: MonoBehaviour
         CameraController sc = mainCam.GetComponent<CameraController>();
         sc.CameraOffset = new Vector3(0,0,0);
         sc.ResetSpeed = 100f;
-        sc.MinimumZoom = sc.MaximumZoom = 3f;
+        sc.MinimumZoom = sc.MaximumZoom = 2f;
         
 			  MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, timeset, 100000f, false, 0f, false);
       }
       else
       {
         CameraController sc = mainCam.GetComponent<CameraController>();
-        sc.CameraOffset = new Vector3(0,3,0);
+        sc.CameraOffset = new Vector3(0,2,0);
         MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
         sc.ResetSpeed = 0.1f;
-        sc.MinimumZoom = sc.MaximumZoom = 5f;
+        sc.MinimumZoom = sc.MaximumZoom = 4f;
       }
       photo.gameObject.SetActive(false);
       cameraAperture.localPosition = Vector3.zero;
