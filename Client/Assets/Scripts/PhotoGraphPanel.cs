@@ -52,7 +52,7 @@ public class PhotoGraphPanel: MonoBehaviour
       CharacterJump jumpaa = LevelManager.Instance.Players[0].GetComponent<CharacterJump>();
       jumpaa.booltakepic = status;
       CameraController sc = mainCam.GetComponent<CameraController>();
-      sc.CameraSpeed = 0.3f;
+      sc.CameraSpeed = 0.2f;
       sc.ZoomSpeed = 0.01f;
       if (status)
       {
@@ -62,7 +62,7 @@ public class PhotoGraphPanel: MonoBehaviour
       }
       else
       {
-        sc.CameraOffset = new Vector3(0,2,0);
+        sc.CameraOffset = new Vector3(0,0.7f,0);
         MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
         sc.MinimumZoom = sc.MaximumZoom = 3f;
       }

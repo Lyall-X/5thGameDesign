@@ -37,6 +37,8 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
           if (sc1)
           {
             sc1.enabled = true;
+            sc1.PathElements[1].PathElementPosition.x = sc1.PathElements[1].PathElementPosition.x * (-1);
+            sc1.PathElements[0].PathElementPosition.x = sc1.PathElements[1].PathElementPosition.x * (-1);
           }
           Collider2D c2d = child.gameObject.GetComponent<Collider2D>();
           if (c2d)

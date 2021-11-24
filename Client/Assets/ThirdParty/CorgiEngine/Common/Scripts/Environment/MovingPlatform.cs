@@ -215,6 +215,9 @@ namespace MoreMountains.CorgiEngine
             {
                 return;
             }				
+            
+            // if (gameObject.name != "door1" && gameObject.name != "door2")
+            //     MoveTowardsEnd ();
 
 			_collidingWithPlayer = true;	
 			_collidingController = controller;
@@ -231,6 +234,8 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="collider">Collider.</param>
 		public virtual void OnTriggerExit2D(Collider2D collider)
 		{
+            // if (gameObject.name != "door1" && gameObject.name != "door2")
+            //     MoveTowardsStart ();
 			CorgiController controller=collider.GetComponent<CorgiController>();
 			if (controller==null)
 				return;
@@ -286,6 +291,8 @@ namespace MoreMountains.CorgiEngine
 		protected override void Move()
         {
             base.Move();
+            if (gameObject.name == "door1" || gameObject.name == "door2")
+            return;
 			if(_currentPoint.Current.x > 0)
                 this.transform.localEulerAngles = new Vector3(0,-180,0);
 			else

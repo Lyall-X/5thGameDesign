@@ -1285,137 +1285,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &377505055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 377505056}
-  - component: {fileID: 377505058}
-  - component: {fileID: 377505057}
-  m_Layer: 0
-  m_Name: DialogueZone2 (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: -1089502233064743932, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &377505056
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377505055}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -120.969, y: -9.638, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1055818602}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &377505057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377505055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6432d8d1924b43748819ec079d9d2eed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonActivatedRequirement: 2
-  RequiresPlayerType: 1
-  RequiresButtonActivationAbility: 1
-  PreventJumpsWhileInThisZone: 0
-  Activable: 1
-  AutoActivation: 1
-  AutoActivationAndButtonInteraction: 0
-  CanOnlyActivateIfGrounded: 0
-  ShouldUpdateState: 1
-  OnlyOneActivationAtOnce: 1
-  AlsoPerformChecksOnStay: 0
-  UnlimitedActivations: 1
-  MaxNumberOfActivations: 0
-  DelayBetweenUses: 1
-  DisableAfterUse: 0
-  InputType: 0
-  InputButton: Interact
-  InputKey: 32
-  AnimationTriggerParameterName: 
-  UseVisualPrompt: 1
-  ButtonPromptPrefab: {fileID: 0}
-  ButtonPromptText: A
-  ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
-  ButtonPromptTextColor: {r: 1, g: 1, b: 1, a: 1}
-  AlwaysShowPrompt: 0
-  ShowPromptWhenColliding: 1
-  HidePromptAfterUse: 0
-  PromptRelativePosition: {x: 0, y: 0, z: 0}
-  ActivationFeedback: {fileID: 0}
-  DeniedFeedback: {fileID: 0}
-  EnterFeedback: {fileID: 0}
-  ExitFeedback: {fileID: 0}
-  OnActivation:
-    m_PersistentCalls:
-      m_Calls: []
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStay:
-    m_PersistentCalls:
-      m_Calls: []
-  DialogueBoxPrefab: {fileID: 199184, guid: 927a7e5e78367cc4ba304dae75c80ddf, type: 3}
-  TextBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  TextColor: {r: 1, g: 1, b: 1, a: 1}
-  ArrowVisible: 0
-  TextFont: {fileID: 0}
-  TextSize: 15
-  Alignment: 4
-  FadeDuration: 1
-  TransitionTime: 1
-  DistanceFromTop: 1
-  BoxesFollowZone: 0
-  CanMoveWhileTalking: 0
-  ButtonHandled: 0
-  MessageDuration: 1.5
-  ActivableMoreThanOnce: 0
-  InactiveTime: 2
-  Dialogue:
-  - "\u5979\u53D1\u73B0\u8FD9\u6709\u5835\u5899\uFF0C\u4F3C\u4E4E\u8FC7\u4E0D\u53BB"
-  - "\u8BD5\u7740\u628A\u9668\u77F3\u62CD\u4E0B\u6765\uFF0C\u6253\u5F00\u4F7F\u7528\u76F8\u7247"
-  - "\u518D\u653E\u5230\u5899\u89D2\u8E29\u7740\u9668\u77F3\u8FC7\u53BB"
---- !u!61 &377505058
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377505055}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.21468735, y: 0.07667494}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.773201, y: 2.1533499}
-  m_EdgeRadius: 0
 --- !u!1 &393113696
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,169 +4975,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
---- !u!1 &1055740062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1055740063}
-  - component: {fileID: 1055740065}
-  - component: {fileID: 1055740064}
-  m_Layer: 0
-  m_Name: DialogueZone2 (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: -1089502233064743932, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1055740063
+--- !u!4 &1055818602 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3135786999758401736}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055740062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -117.45, y: -8.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1055818602}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1055740064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055740062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6432d8d1924b43748819ec079d9d2eed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonActivatedRequirement: 2
-  RequiresPlayerType: 1
-  RequiresButtonActivationAbility: 1
-  PreventJumpsWhileInThisZone: 0
-  Activable: 1
-  AutoActivation: 1
-  AutoActivationAndButtonInteraction: 0
-  CanOnlyActivateIfGrounded: 0
-  ShouldUpdateState: 1
-  OnlyOneActivationAtOnce: 1
-  AlsoPerformChecksOnStay: 0
-  UnlimitedActivations: 1
-  MaxNumberOfActivations: 0
-  DelayBetweenUses: 1
-  DisableAfterUse: 0
-  InputType: 0
-  InputButton: Interact
-  InputKey: 32
-  AnimationTriggerParameterName: 
-  UseVisualPrompt: 1
-  ButtonPromptPrefab: {fileID: 0}
-  ButtonPromptText: A
-  ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
-  ButtonPromptTextColor: {r: 1, g: 1, b: 1, a: 1}
-  AlwaysShowPrompt: 0
-  ShowPromptWhenColliding: 1
-  HidePromptAfterUse: 0
-  PromptRelativePosition: {x: 0, y: 0, z: 0}
-  ActivationFeedback: {fileID: 0}
-  DeniedFeedback: {fileID: 0}
-  EnterFeedback: {fileID: 0}
-  ExitFeedback: {fileID: 0}
-  OnActivation:
-    m_PersistentCalls:
-      m_Calls: []
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStay:
-    m_PersistentCalls:
-      m_Calls: []
-  DialogueBoxPrefab: {fileID: 199184, guid: 927a7e5e78367cc4ba304dae75c80ddf, type: 3}
-  TextBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  TextColor: {r: 1, g: 1, b: 1, a: 1}
-  ArrowVisible: 0
-  TextFont: {fileID: 0}
-  TextSize: 15
-  Alignment: 4
-  FadeDuration: 1
-  TransitionTime: 1
-  DistanceFromTop: 1
-  BoxesFollowZone: 0
-  CanMoveWhileTalking: 0
-  ButtonHandled: 0
-  MessageDuration: 1.5
-  ActivableMoreThanOnce: 0
-  InactiveTime: 2
-  Dialogue:
-  - "  \u592A\u68D2\u4E86\n\u7EC8\u4E8E\u8FC7\u6765\u4E86"
-  - "\t \u8FDC\u8FDC\u671B\u53BB\n\u8FD9\u9053\u95E8\u540E\u9762\u6709\u4E00\u5EA7\u5947\u602A\u7684\u9057\u8FF9\u5EFA\u7B51"
---- !u!61 &1055740065
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055740062}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.21468735, y: 0.07667494}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.773201, y: 2.1533499}
-  m_EdgeRadius: 0
---- !u!1 &1055818601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1055818602}
-  m_Layer: 0
-  m_Name: DialogueZones
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1055818602
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055818601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.94349, y: -14.962286, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2038688920}
-  - {fileID: 377505056}
-  - {fileID: 1055740063}
-  m_Father: {fileID: 79874241}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073605301
 GameObject:
   m_ObjectHideFlags: 0
@@ -8034,136 +7746,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78aeeb23eda41404dbd56028e99e41df, type: 3}
---- !u!1 &2038688919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2038688920}
-  - component: {fileID: 2038688922}
-  - component: {fileID: 2038688921}
-  m_Layer: 0
-  m_Name: DialogueZone2 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: -1089502233064743932, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2038688920
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038688919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -128.897, y: -9.638, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1055818602}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2038688921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038688919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6432d8d1924b43748819ec079d9d2eed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonActivatedRequirement: 2
-  RequiresPlayerType: 1
-  RequiresButtonActivationAbility: 1
-  PreventJumpsWhileInThisZone: 0
-  Activable: 1
-  AutoActivation: 1
-  AutoActivationAndButtonInteraction: 0
-  CanOnlyActivateIfGrounded: 0
-  ShouldUpdateState: 1
-  OnlyOneActivationAtOnce: 1
-  AlsoPerformChecksOnStay: 0
-  UnlimitedActivations: 1
-  MaxNumberOfActivations: 0
-  DelayBetweenUses: 1
-  DisableAfterUse: 0
-  InputType: 0
-  InputButton: Interact
-  InputKey: 32
-  AnimationTriggerParameterName: 
-  UseVisualPrompt: 1
-  ButtonPromptPrefab: {fileID: 0}
-  ButtonPromptText: A
-  ButtonPromptColor: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
-  ButtonPromptTextColor: {r: 1, g: 1, b: 1, a: 1}
-  AlwaysShowPrompt: 0
-  ShowPromptWhenColliding: 1
-  HidePromptAfterUse: 0
-  PromptRelativePosition: {x: 0, y: 0, z: 0}
-  ActivationFeedback: {fileID: 0}
-  DeniedFeedback: {fileID: 0}
-  EnterFeedback: {fileID: 0}
-  ExitFeedback: {fileID: 0}
-  OnActivation:
-    m_PersistentCalls:
-      m_Calls: []
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStay:
-    m_PersistentCalls:
-      m_Calls: []
-  DialogueBoxPrefab: {fileID: 199184, guid: 927a7e5e78367cc4ba304dae75c80ddf, type: 3}
-  TextBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  TextColor: {r: 1, g: 1, b: 1, a: 1}
-  ArrowVisible: 0
-  TextFont: {fileID: 0}
-  TextSize: 15
-  Alignment: 4
-  FadeDuration: 1
-  TransitionTime: 1
-  DistanceFromTop: 1
-  BoxesFollowZone: 0
-  CanMoveWhileTalking: 0
-  ButtonHandled: 0
-  MessageDuration: 1.5
-  ActivableMoreThanOnce: 0
-  InactiveTime: 2
-  Dialogue:
-  - "\u524D\u9762\u9668\u77F3\u4E0A\u6709\u4E00\u90E8\u76F8\u673A"
-  - "\u4F3C\u4E4E\u53EF\u4EE5\u7528\u6765\u4FDD\u5B58\u548C\u590D\u5236\u4E00\u4E9B\u4E1C\u897F"
---- !u!61 &2038688922
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038688919}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.21468735, y: 0.07667494}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.773201, y: 2.1533499}
-  m_EdgeRadius: 0
 --- !u!225 &2047613960
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11551,6 +11133,75 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &3135786999758401736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 79874241}
+    m_Modifications:
+    - target: {fileID: 3135787000717489057, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueZones
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 37.94349
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.962286
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135787000717489058, guid: 1cff40e789020304aaf42b1d7d26087a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1cff40e789020304aaf42b1d7d26087a, type: 3}
 --- !u!222 &3302446023407816708
 CanvasRenderer:
   m_ObjectHideFlags: 0
