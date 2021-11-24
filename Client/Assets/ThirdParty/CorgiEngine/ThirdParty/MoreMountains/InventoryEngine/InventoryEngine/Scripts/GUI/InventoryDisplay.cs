@@ -159,6 +159,7 @@ namespace MoreMountains.InventoryEngine
 		public List<GameObject> SlotContainer { get; protected set; }	
 		/// the inventory the focus should return to after an action
 		public InventoryDisplay ReturnInventory { get; protected set; }	
+		public GameObject select;
 
 		/// the item currently being moved
 		[MMHidden]
@@ -173,6 +174,17 @@ namespace MoreMountains.InventoryEngine
 
 		protected GameObject _slotPrefab = null;
 
+ private void Update() {
+	 for(int i = 0; i < TargetInventory.Content.Length; i++)
+	 {	
+		 if (!InventoryItem.IsNull(TargetInventory.Content[i]))
+		 {
+			 select.SetActive(true);
+			 break;
+		 }
+			 select.SetActive(false);
+	 }
+ }
 		/// <summary>
 		/// Creates and sets up the inventory display (usually called via the inspector's dedicated button)
 		/// </summary>

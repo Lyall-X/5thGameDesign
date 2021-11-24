@@ -10,6 +10,7 @@ TagManager:
   - NoMask
   - nogravity
   - PhotoImage
+  - select
   layers:
   - Default
   - TransparentFX

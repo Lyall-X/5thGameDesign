@@ -114,5 +114,19 @@ namespace MoreMountains.CorgiEngine
 			yield return new WaitForSeconds (FadeOutDuration);
 			MMSceneLoadingManager.LoadScene (NextLevel);
 		}
+
+		public void Nameaa()
+		{
+			MMFadeInEvent.Trigger(FadeOutDuration, Tween, 0, true);
+			// if the user presses the "Jump" button, we start the first level.
+			StartCoroutine (Nameaabb ());
+			
+		}
+		
+		protected virtual IEnumerator Nameaabb()
+		{
+			yield return new WaitForSeconds (FadeOutDuration);
+			MMSceneLoadingManager.LoadScene ("name");
+		}
 	}
 }

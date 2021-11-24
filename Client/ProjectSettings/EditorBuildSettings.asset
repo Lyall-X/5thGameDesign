@@ -17,9 +17,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Levels/2222.unity
     guid: f02456ee720b59c46807dfa554428715
+  - enabled: 1
+    path: Assets/Scenes/names.unity
+    guid: 8af426c3b874ea94f890b850e843e40b
   - enabled: 0
     path: Assets/Scenes/Levels/33333.unity
     guid: d345d4682c5cc1b4dba798f84428570c
+  - enabled: 1
+    path: "Assets/Scenes/Levels/\u7B2C\u4E00\u5173\uFF1A\u6708\u7403\u63A2\u7D22.unity"
+    guid: 5b45a269e08214f45ad07a7e23cad84a
   - enabled: 1
     path: "Assets/Scenes/Levels/\u7B2C\u4E09\u5173\uFF1A\u9690\u85CF\u7684\u79D8\u5BC6.unity"
     guid: bdfe69e803cb6244799db423496af986
@@ -29,6 +35,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Levels/22222.unity
     guid: 1286ac6681c70784b906c4cffceeab4e
+  - enabled: 1
+    path: "Assets/Scenes/Levels/\u7B2C\u4E8C\u5173\uFF1A\u65E0\u754F\u661F\u7403.unity"
+    guid: 6e30951f3f8a3374daf684a18311a175
   - enabled: 0
     path: Assets/ThirdParty/CorgiEngine/ThirdParty/MoreMountains/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreen.unity
     guid: d89b77a7a68c1844280c6ff2e49f95b8

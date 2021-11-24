@@ -13285,7 +13285,7 @@ GameObject:
   - component: {fileID: 4077943358828028215}
   m_Layer: 5
   m_Name: InventorySelectionMarker
-  m_TagString: Untagged
+  m_TagString: select
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13529,6 +13529,7 @@ MonoBehaviour:
   QtyAlignment: 8
   PreviousInventory: {fileID: 0}
   NextInventory: {fileID: 0}
+  select: {fileID: 4077943358828028213}
   CurrentlyBeingMovedItemIndex: -1
 --- !u!224 &4077943359581969885
 RectTransform:
