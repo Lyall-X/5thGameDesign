@@ -263,7 +263,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  WalkSpeed: 6
+  WalkSpeed: 3
   MovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
   StateSpeedMultiplier: 1
@@ -393,7 +393,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   NumberOfJumps: 1
-  JumpHeight: 2
+  JumpHeight: 1.5
   JumpRestrictions: 2
   ResetCameraOffsetOnJump: 0
   CanJumpDownOneWayPlatforms: 1
@@ -5704,7 +5704,7 @@ Animator:
   m_GameObject: {fileID: 1751950590137194716}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 73556245ff77e8d4c9a87ef622a32304, type: 2}
+  m_Controller: {fileID: 9100000, guid: 083d8b4741ae68e4195c11b1be1eeaea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

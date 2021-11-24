@@ -49,22 +49,22 @@ public class PhotoGraphPanel: MonoBehaviour
           script.CloseInventory();
       }
       
+      CharacterJump jumpaa = LevelManager.Instance.Players[0].GetComponent<CharacterJump>();
+      jumpaa.booltakepic = status;
+      CameraController sc = mainCam.GetComponent<CameraController>();
+      sc.CameraSpeed = 0.3f;
+      sc.ZoomSpeed = 0.01f;
       if (status)
       {
-        CameraController sc = mainCam.GetComponent<CameraController>();
         sc.CameraOffset = new Vector3(0,0,0);
-        sc.ResetSpeed = 100f;
         sc.MinimumZoom = sc.MaximumZoom = 2f;
-        
 			  MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, timeset, 100000f, false, 0f, false);
       }
       else
       {
-        CameraController sc = mainCam.GetComponent<CameraController>();
         sc.CameraOffset = new Vector3(0,2,0);
         MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
-        sc.ResetSpeed = 0.1f;
-        sc.MinimumZoom = sc.MaximumZoom = 4f;
+        sc.MinimumZoom = sc.MaximumZoom = 3f;
       }
       photo.gameObject.SetActive(false);
       cameraAperture.localPosition = Vector3.zero;
@@ -94,6 +94,9 @@ public class PhotoGraphPanel: MonoBehaviour
     public void TakePicture()
     {
         MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
+        
+      CharacterJump jump = LevelManager.Instance.Players[0].GetComponent<CharacterJump>();
+      jump.booltakepic = false;
         photo.localScale = Vector3.one;
         photo.localPosition = Vector3.zero;
         photo.localEulerAngles = Vector3.zero;
@@ -109,6 +112,9 @@ public class PhotoGraphPanel: MonoBehaviour
         sequence.Insert(1f,photo.DOMove(photoBtn.transform.position, 0.5f));
         sequence.Insert(1f, photo.DOScale(Vector3.one * 0.2f, 0.5f));
         sequence.onComplete = () => {
+                 
+      CharacterJump jumpaa = LevelManager.Instance.Players[0].GetComponent<CharacterJump>();
+      jumpaa.booltakepic = false;
           Show(false);
         };
         

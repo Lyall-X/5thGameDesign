@@ -3,7 +3,6 @@ using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using UnityEngine.Serialization;
-
 namespace MoreMountains.CorgiEngine
 {
     /// <summary>
@@ -107,12 +106,15 @@ namespace MoreMountains.CorgiEngine
         protected bool _coyoteTime = false;
                 
         // animation parameters
-        protected const string _jumpingAnimationParameterName = "Jumping";
+        protected const string _jumpingAnimationParameterName = "jump";
         protected const string _doubleJumpingAnimationParameterName = "DoubleJumping";
         protected const string _hitTheGroundAnimationParameterName = "HitTheGround";
+        protected const string _takepic = "takepic";
         protected int _jumpingAnimationParameter;
         protected int _doubleJumpingAnimationParameter;
         protected int _hitTheGroundAnimationParameter;
+        protected int takepic;
+        public bool booltakepic;
 
         /// Evaluates the jump restrictions
         public virtual bool JumpAuthorized 
@@ -590,19 +592,21 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
         protected override void InitializeAnimatorParameters()
 		{
-			RegisterAnimatorParameter (_jumpingAnimationParameterName, AnimatorControllerParameterType.Bool, out _jumpingAnimationParameter);
+			RegisterAnimatorParameter (_jumpingAnimationParameterName, AnimatorControllerParameterType.Trigger, out _jumpingAnimationParameter);
 			RegisterAnimatorParameter (_doubleJumpingAnimationParameterName, AnimatorControllerParameterType.Bool, out _doubleJumpingAnimationParameter);
 			RegisterAnimatorParameter (_hitTheGroundAnimationParameterName, AnimatorControllerParameterType.Bool, out _hitTheGroundAnimationParameter);
+			RegisterAnimatorParameter (_takepic, AnimatorControllerParameterType.Bool, out takepic);
 		}
 
 		/// <summary>
 		/// At the end of each cycle, sends Jumping states to the Character's animator
 		/// </summary>
 		public override void UpdateAnimator()
-		{
+		{ 
             MMAnimatorExtensions.UpdateAnimatorBool(_animator, _jumpingAnimationParameter, (_movement.CurrentState == CharacterStates.MovementStates.Jumping),_character._animatorParameters, _character.PerformAnimatorSanityChecks);
             MMAnimatorExtensions.UpdateAnimatorBool(_animator, _doubleJumpingAnimationParameter, _doubleJumping,_character._animatorParameters, _character.PerformAnimatorSanityChecks);
             MMAnimatorExtensions.UpdateAnimatorBool (_animator, _hitTheGroundAnimationParameter, _controller.State.JustGotGrounded, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+            MMAnimatorExtensions.UpdateAnimatorBool (_animator, takepic, booltakepic, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
 
 		/// <summary>
