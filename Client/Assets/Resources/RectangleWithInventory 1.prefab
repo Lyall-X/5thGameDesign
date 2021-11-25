@@ -263,7 +263,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  WalkSpeed: 3
+  WalkSpeed: 2
   MovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
   StateSpeedMultiplier: 1
@@ -393,12 +393,12 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   NumberOfJumps: 1
-  JumpHeight: 1.5
+  JumpHeight: 1.2
   JumpRestrictions: 2
   ResetCameraOffsetOnJump: 0
   CanJumpDownOneWayPlatforms: 0
   JumpIsProportionalToThePressTime: 0
-  JumpMinimumAirTime: 0.25
+  JumpMinimumAirTime: 0
   JumpReleaseForceFactor: 2
   CoyoteTime: 0
   InputBufferDuration: 0
