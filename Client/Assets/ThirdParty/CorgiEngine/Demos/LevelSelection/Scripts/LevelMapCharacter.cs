@@ -204,7 +204,7 @@ namespace MoreMountains.CorgiEngine
 					_currentSpeed=0f;
 				}
 				// we pass that parameter to our animator
-				_animator.SetFloat("Speed", _currentSpeed);
+				_animator.SetBool("Walking", (_currentSpeed == 1f));
 			}
 
 			_positionLastFrame=transform.position;
