@@ -126,7 +126,7 @@ namespace MoreMountains.CorgiEngine
 		protected virtual IEnumerator Nameaabb()
 		{
 			yield return new WaitForSeconds (FadeOutDuration);
-			MMSceneLoadingManager.LoadScene ("name");
+			MMSceneLoadingManager.LoadScene ("names");
 		}
 	}
 }

@@ -75,7 +75,7 @@ public class PhotoGraphPanel: MonoBehaviour
     private void showCanmra()
     {
       this.Show(!gameObject.activeSelf);
-      MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
+      // MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
     }
 
     private void ShowPhotos()
@@ -84,6 +84,7 @@ public class PhotoGraphPanel: MonoBehaviour
       InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
       script.ToggleInventory();
       gameObject.SetActive(false);
+      // MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
     }
 
     private void Close()

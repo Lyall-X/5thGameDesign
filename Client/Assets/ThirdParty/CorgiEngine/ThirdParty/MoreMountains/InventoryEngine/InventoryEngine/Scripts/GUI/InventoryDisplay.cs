@@ -496,6 +496,7 @@ namespace MoreMountains.InventoryEngine
 			{
 				SlotContainer[i].GetComponent<Image>().sprite = EmptySlotImage;    	
 			}
+      
 			// we remove potential child objects
 			SlotContainer[i].transform.transform.Find("photo").gameObject.SetActive(false);
 			foreach(Transform child in SlotContainer[i].transform.Find("photo/mask22"))
@@ -547,6 +548,10 @@ namespace MoreMountains.InventoryEngine
 				copy.name = "photo";
 				copy.transform.position = new Vector3(0,0,0);
 				copy.transform.SetParent(_slotPrefab.transform);
+        foreach(Transform child in copy.transform)
+        {
+          child.name = "mask22";
+        }
 			}
 	
 

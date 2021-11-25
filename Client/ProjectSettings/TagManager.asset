@@ -11,6 +11,7 @@ TagManager:
   - nogravity
   - PhotoImage
   - select
+  - PhotoImage2
   layers:
   - Default
   - TransparentFX

@@ -6,12 +6,13 @@ using UnityEngine.EventSystems;
 using  DG.Tweening;
 using MoreMountains.InventoryEngine;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Feedbacks;
 
 
 public class ACharacterHandleWeapon : CharacterHandleWeapon
 {
   private GameObject photoCanvas;
-  private bool isUsing = false;
+  private bool isUsing = true;
 
   protected override void Initialization () 
   {
@@ -19,15 +20,23 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
     photoCanvas = GameObject.Find("/Canvas/PhotoGraphPanel");
     photoCanvas.SetActive(false);
   }
-
+  
+  bool change = true;
   protected override void HandleInput ()
   {
-    if (Input.GetMouseButtonDown(1))
+    if (change != photoCanvas.activeSelf)
     {
-      photoCanvas.GetComponent<PhotoGraphPanel>().Show(false);
+      if (!photoCanvas.activeSelf)
+        MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
+      change = photoCanvas.activeSelf;
     }
 
-    if (_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+    // if (Input.GetMouseButtonDown(1))
+    // {
+    //   photoCanvas.GetComponent<PhotoGraphPanel>().Show(false);
+    // }
+
+    if (_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown && isUsing)
     {
       if (PropMgr.Instance.PicObj)
       {
@@ -60,13 +69,13 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
       }
       else
       {
-        GameObject btn = EventSystem.current.currentSelectedGameObject;
-        GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
-        InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
-        if (btn == null && !photoCanvas.activeSelf && !script.InventoryIsOpen)
-        {
-          photoCanvas.GetComponent<PhotoGraphPanel>().Show(true);
-        }
+        // GameObject btn = EventSystem.current.currentSelectedGameObject;
+        // GameObject InventoryCanvas = GameObject.Find("/UICamera/InventoryCanvas");
+        // InventoryInputManager script = InventoryCanvas.GetComponent<InventoryInputManager>();
+        // if (btn == null && !photoCanvas.activeSelf && !script.InventoryIsOpen)
+        // {
+        //   photoCanvas.GetComponent<PhotoGraphPanel>().Show(true);
+        // }
       }
       PropMgr.Instance.PicObj = null;
       isUsing = false;
