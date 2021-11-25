@@ -396,9 +396,9 @@ MonoBehaviour:
   JumpHeight: 1.5
   JumpRestrictions: 2
   ResetCameraOffsetOnJump: 0
-  CanJumpDownOneWayPlatforms: 1
-  JumpIsProportionalToThePressTime: 1
-  JumpMinimumAirTime: 0.2
+  CanJumpDownOneWayPlatforms: 0
+  JumpIsProportionalToThePressTime: 0
+  JumpMinimumAirTime: 0.25
   JumpReleaseForceFactor: 2
   CoyoteTime: 0
   InputBufferDuration: 0
