@@ -108,17 +108,6 @@ public class PhotoGraphPanel: MonoBehaviour
         Texture2D texture = ScreenShot(Camera.main, cameraAperture, picname);
         image.texture = texture;
 
-        GameObject de = GameObject.FindGameObjectWithTag("DebugTag");
-        if (pic)
-        {
-          de.GetComponent<Text>().text = "有对象";
-        }
-        else
-        {
-          de.GetComponent<Text>().text = "空的！！";
-        }
-        
-        
         Sequence sequence = DOTween.Sequence();
         sequence.Append(photo.DORotate(new Vector3(0,0,-15), 0.1f));
         sequence.Insert(1f,photo.DOMove(photoBtn.transform.position, 0.5f));

@@ -14,6 +14,7 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
 {
   private GameObject photoCanvas;
   private bool isUsing = false;
+  private bool touch = false;
 
   protected override void Initialization () 
   {
@@ -38,7 +39,7 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
     // }
     bool canMove = false;
     #if UNITY_ANDROID || UNITY_IPHONE
-      canMove = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended;
+      canMove = _inputManager.JumpButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
     #else
       canMove = _inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
     #endif
@@ -73,6 +74,8 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
             prop.putdown = true;
           }
         }
+        GameObject de = GameObject.FindGameObjectWithTag("DebugTag");
+        de.GetComponent<Text>().text = "Jump";
       }
       else
       {
@@ -130,17 +133,18 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
         
       #if UNITY_ANDROID || UNITY_IPHONE
         PropMgr.Instance.PicObj.transform.position = new Vector3(transform.position.x, transform.position.y + 2, PropMgr.Instance.PicObj.transform.position.z);
-
-        GameObject de = GameObject.FindGameObjectWithTag("DebugTag");
-        de.GetComponent<Text>().text = "andorid设备" + PropMgr.Instance.PicObj.transform.position;
       #endif
       }
 
       #if UNITY_ANDROID || UNITY_IPHONE
-        // if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
-        //   Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-        //   PropMgr.Instance.PicObj.transform.Translate(touchDeltaPosition.x * 0.1f, touchDeltaPosition.y * 0.1f, PropMgr.Instance.PicObj.transform.position.z);
-        // }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
+          Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition; 
+
+          GameObject de2 = GameObject.FindGameObjectWithTag("TagTest");
+          de2.GetComponent<Text>().text = Camera.main.ScreenToWorldPoint(touchDeltaPosition * 0.1f).ToString();
+        }
+        GameObject de = GameObject.FindGameObjectWithTag("DebugTag");
+        de.GetComponent<Text>().text = "放置";
       #else
         Vector3 pos = Camera.main.WorldToScreenPoint(PropMgr.Instance.PicObj.transform.position);
         Vector3 m_MousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, pos.z);

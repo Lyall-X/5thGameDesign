@@ -208,7 +208,7 @@ namespace MoreMountains.CorgiEngine
 			ButtonList.Add(JetpackButton = new MMInput.IMButton (PlayerID, "Jetpack", JetpackButtonDown, JetpackButtonPressed, JetpackButtonUp)); 
 			ButtonList.Add(RunButton  = new MMInput.IMButton (PlayerID, "Run", RunButtonDown, RunButtonPressed, RunButtonUp));
 			ButtonList.Add(GripButton  = new MMInput.IMButton (PlayerID, "Grip", GripButtonDown, GripButtonPressed, GripButtonUp));
-			ButtonList.Add(DashButton = new MMInput.IMButton(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
+			// ButtonList.Add(DashButton = new MMInput.IMButton(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
 			ButtonList.Add(RollButton = new MMInput.IMButton(PlayerID, "Roll", RollButtonDown, RollButtonPressed, RollButtonUp));
             ButtonList.Add(FlyButton = new MMInput.IMButton(PlayerID, "Fly", FlyButtonDown, FlyButtonPressed, FlyButtonUp));
             ButtonList.Add(ShootButton = new MMInput.IMButton(PlayerID, "Shoot", ShootButtonDown, ShootButtonPressed, ShootButtonUp));
