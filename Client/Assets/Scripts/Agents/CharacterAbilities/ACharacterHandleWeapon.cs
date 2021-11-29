@@ -7,12 +7,13 @@ using  DG.Tweening;
 using MoreMountains.InventoryEngine;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Feedbacks;
+using UnityEngine.UI;
 
 
 public class ACharacterHandleWeapon : CharacterHandleWeapon
 {
   private GameObject photoCanvas;
-  private bool isUsing = true;
+  private bool isUsing = false;
 
   protected override void Initialization () 
   {
@@ -35,8 +36,14 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
     // {
     //   photoCanvas.GetComponent<PhotoGraphPanel>().Show(false);
     // }
+    bool canMove = false;
+    #if UNITY_ANDROID || UNITY_IPHONE
+      canMove = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended;
+    #else
+      canMove = _inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown;
+    #endif
 
-    if (_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown && isUsing)
+    if ( canMove && isUsing)
     {
       if (PropMgr.Instance.PicObj)
       {
@@ -119,11 +126,26 @@ public class ACharacterHandleWeapon : CharacterHandleWeapon
           }
         }
         isUsing = true;
+
+        
+      #if UNITY_ANDROID || UNITY_IPHONE
+        PropMgr.Instance.PicObj.transform.position = new Vector3(transform.position.x, transform.position.y + 2, PropMgr.Instance.PicObj.transform.position.z);
+
+        GameObject de = GameObject.FindGameObjectWithTag("DebugTag");
+        de.GetComponent<Text>().text = "andorid设备" + PropMgr.Instance.PicObj.transform.position;
+      #endif
       }
-      Vector3 pos = Camera.main.WorldToScreenPoint(PropMgr.Instance.PicObj.transform.position);
-      Vector3 m_MousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, pos.z);
-      PropMgr.Instance.PicObj.transform.position = Camera.main.ScreenToWorldPoint(m_MousePos);
-      
+
+      #if UNITY_ANDROID || UNITY_IPHONE
+        // if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
+        //   Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+        //   PropMgr.Instance.PicObj.transform.Translate(touchDeltaPosition.x * 0.1f, touchDeltaPosition.y * 0.1f, PropMgr.Instance.PicObj.transform.position.z);
+        // }
+      #else
+        Vector3 pos = Camera.main.WorldToScreenPoint(PropMgr.Instance.PicObj.transform.position);
+        Vector3 m_MousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, pos.z);
+        PropMgr.Instance.PicObj.transform.position = Camera.main.ScreenToWorldPoint(m_MousePos);
+      #endif
     }
   }
 }
