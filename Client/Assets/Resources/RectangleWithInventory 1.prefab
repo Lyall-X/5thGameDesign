@@ -263,13 +263,13 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  WalkSpeed: 2
+  WalkSpeed: 2.2
   MovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
   StateSpeedMultiplier: 1
   FlipCharacterToFaceDirection: 1
   ReadInput: 1
-  InstantAcceleration: 0
+  InstantAcceleration: 1
   InputThreshold: 0.1
   AirControl: 1
   AllowFlipInTheAir: 1
