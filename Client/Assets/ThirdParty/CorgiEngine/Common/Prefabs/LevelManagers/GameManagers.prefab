@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 490956}
   - component: {fileID: 11489144}
-  - component: {fileID: 114992019002501916}
   - component: {fileID: 114903719044035428}
   m_Layer: 0
   m_Name: GameManagers
@@ -45,22 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87418644c0f29bf43b19453d3639eb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutomaticallyUnparentOnAwake: 1
   TargetFrameRate: 300
   MaximumLives: 5
   CurrentLives: 5
   GameOverScene: RetroAdventureGameOver
---- !u!114 &114992019002501916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5a5ae18d78bbe4fa4fd5448234ff14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114903719044035428
 MonoBehaviour:
   m_ObjectHideFlags: 0

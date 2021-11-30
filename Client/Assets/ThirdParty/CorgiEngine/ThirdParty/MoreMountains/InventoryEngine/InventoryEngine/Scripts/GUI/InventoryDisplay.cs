@@ -180,10 +180,10 @@ namespace MoreMountains.InventoryEngine
 		 if (!InventoryItem.IsNull(TargetInventory.Content[i]))
 		 {
 			 select.SetActive(true);
-			 break;
+			 return;
 		 }
-			 select.SetActive(false);
 	 }
+  select.SetActive(false);
  }
 		/// <summary>
 		/// Creates and sets up the inventory display (usually called via the inspector's dedicated button)
